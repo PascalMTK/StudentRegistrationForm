@@ -1,0 +1,119 @@
+/* Base Button & Form Button Styles */
+.form-section button[type="submit"],
+.form-section button[type="reset"],
+.edit-btn,
+/* REMOVED: .edit-btn-table, */
+.remove-btn,
+.remove-btn-table {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    color: white;
+}
+
+/* --- Form Submission/Reset Button Group --- */
+.form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.form-section button[type="submit"],
+.form-section button[type="reset"] {
+    flex: 1 1 100%;
+    max-width: 320px;
+    padding: 0.9rem 1.8rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* Submit Button */
+.form-section button[type="submit"] {
+    background: linear-gradient(135deg, 
+    var(--primary-color, #007bff), 
+    var(--primary-dark-color, #0056b3));
+}
+
+.form-section button[type="submit"]:hover {
+    background: linear-gradient(135deg, 
+    var(--primary-dark-color, #0056b3), 
+    var(--primary-color, #007bff));
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Reset Button */
+.form-section button[type="reset"] {
+    background: linear-gradient(135deg, 
+    var(--secondary-color, #6c757d), 
+    var(--secondary-dark-color, #5a6268));
+}
+
+.form-section button[type="reset"]:hover {
+    background: linear-gradient(135deg, 
+    var(--secondary-dark-color, #5a6268), 
+    var(--secondary-color, #6c757d));
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* --- Utility/Action Button Group Edit/Remove --- */
+
+/* Style for the container of action buttons in the profile card */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+/* Edit Button (Card Only) */
+.edit-btn {
+    background-color: var(--primary-color, #007bff);
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius, 12px);
+    box-shadow: none;
+}
+
+.edit-btn:hover {
+    background-color: var(--primary-dark-color, #0056b3);
+}
+
+
+/* Remove Buttons ( Cards and Table) */
+.profile-card .remove-btn,
+.remove-btn-table {
+    background-color: var(--error-color, #dc3545);
+    padding: 0.7rem 1.5rem;
+    border-radius: 12px;
+}
+
+.profile-card .remove-btn:hover,
+.remove-btn-table:hover {
+    background-color: var(--error-hover-color, #c82333);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Table action cell styling - Adjusted for a single button */
+#summary-table tbody td:last-child {
+    display: flex;
+    /* Removed gap: 0.5rem; as only one button remains */
+    justify-content: center; /* Center the single button */
+    align-items: center;
+}
+
+/* Responsive adjustments for form buttons on larger screens */
+@media (min-width: 576px) {
+    .form-section button[type="submit"],
+    .form-section button[type="reset"] {
+        flex: 1 1 auto;
+        max-width: 240px;
+    }
+}
